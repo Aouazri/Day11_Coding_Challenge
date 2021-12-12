@@ -90,21 +90,21 @@ def play():
   ## *******************  BLACKJACK ************* ## 
   def compare_score(computer_score, user_score):
     if computer_score == 0 :
-      print("You lost, your opponent has a BLACKJACK!! \U0001F62D \n ")
+      return("You lost, your opponent has a BLACKJACK!! \U0001F62D \n ")
     elif user_score == 0 :
-      print("You WIN with a BLACKJACK!! \U0001F929 \n ")
+      return("You WIN with a BLACKJACK!! \U0001F929 \n ")
       ## ************************************************** ##
     elif user_score>21:
-      print("You went over, you lose! \U0001F622 \n ")
+      return("You went over, you lose! \U0001F622 \n ")
     elif computer_score>21:
-      print("Opponent went over. You win! \U0001f600 \n ")
-    elif user_score< computer_score and computer_score<=21: 
-      print("You lose \U0001F622 \n ")
+      return("Opponent went over. You win! \U0001f600 \n ")
+    elif user_score< computer_score : 
+      return("You lose \U0001F622 \n ")
     elif user_score == computer_score:
-      print("It's a draw \U0001F91D \n ")
+      return("It's a draw \U0001F91D \n ")
     else: 
-      print('You win! \U0001f600 \n ')
-  compare_score(computer_score, user_score)
+      return('You win! \U0001f600 \n ')
+  print(compare_score(computer_score, user_score))
   ## *************************************************************** ##
   should_continue = input("Do you want to play a game of Blackjack? Type 'y' or 'n': \n ").lower()
   if should_continue =='y':
@@ -116,7 +116,5 @@ play_game= input("Do you want to play a game of Blackjack? Type 'y' or 'n': \n")
 if play_game =='y':
   clear()
   play()
-
-
 
 
